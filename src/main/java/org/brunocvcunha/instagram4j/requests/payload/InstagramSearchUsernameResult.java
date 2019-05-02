@@ -32,6 +32,6 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 public class InstagramSearchUsernameResult extends StatusResult {
-    private InstagramUser user;
+    private InstagramUser user;  
 
 }

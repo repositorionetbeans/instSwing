@@ -22,6 +22,7 @@ import org.brunocvcunha.instagram4j.Instagram4j;
 import org.brunocvcunha.instagram4j.InstagramLogin;
 import org.brunocvcunha.instagram4j.requests.InstagramFollowRequest;
 import org.brunocvcunha.instagram4j.requests.InstagramGetUserFollowersRequest;
+import org.brunocvcunha.instagram4j.requests.InstagramGetUserFollowingRequest;
 import org.brunocvcunha.instagram4j.requests.InstagramSearchUsernameRequest;
 import org.brunocvcunha.instagram4j.requests.InstagramUnfollowRequest;
 import org.brunocvcunha.instagram4j.requests.payload.InstagramGetUserFollowersResult;
@@ -108,7 +109,8 @@ public class guiDeixarDeSeguirQuemNaoTeSegue extends javax.swing.JFrame {
 
             try {
                 InstagramSearchUsernameResult userResult = instagram.sendRequest(new InstagramSearchUsernameRequest(perfil));
-                InstagramGetUserFollowersResult followersResult = instagram.sendRequest(new InstagramGetUserFollowersRequest(userResult.getUser().getPk(), nextMaxId));
+                
+                InstagramGetUserFollowersResult followersResult = instagram.sendRequest(new InstagramGetUserFollowingRequest(userResult.getUser().getPk(), nextMaxId));
 
                 List<InstagramUserSummary> users = followersResult.getUsers();
 
